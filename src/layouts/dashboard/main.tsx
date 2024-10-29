@@ -28,7 +28,7 @@ const Main = forwardRef<HTMLDivElement, Props>(({ offsetTop = false }, ref) => {
     mainStyle.paddingTop = multiTab ? MULTI_TABS_HEIGHT : 0;
   } else if (screenMap.md) {
     mainStyle.width = `calc(100% - ${
-      themeLayout === ThemeLayout.Vertical ? NAV_WIDTH : NAV_COLLAPSED_WIDTH
+      themeLayout === ThemeLayout.Mini ? NAV_WIDTH : NAV_COLLAPSED_WIDTH
     })`;
   } else {
     mainStyle.width = '100vw';

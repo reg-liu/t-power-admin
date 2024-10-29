@@ -26,7 +26,7 @@ const useSettingStore = create<SettingStore>()(
       settings: {
         themeColorPresets: ThemeColorPresets.Default,
         themeMode: ThemeMode.Light,
-        themeLayout: ThemeLayout.Vertical,
+        themeLayout: ThemeLayout.Mini,
         themeStretch: false,
         breadCrumb: true,
         multiTab: true,

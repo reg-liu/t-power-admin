@@ -23,8 +23,6 @@ export default function AccountDropdown() {
   const { t } = useTranslation();
   const logout = () => {
     try {
-      // todo const logoutMutation = useMutation(userService.logout);
-      // todo logoutMutation.mutateAsync();
       clearUserInfoAndToken();
       backToLogin();
     } catch (error) {

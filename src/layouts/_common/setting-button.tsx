@@ -196,7 +196,7 @@ export default function SettingButton() {
             </div>
             <div className="grid grid-cols-3 gap-4">
               <Card
-                onClick={() => setThemeLayout(ThemeLayout.Vertical)}
+                onClick={() => setThemeLayout(ThemeLayout.Mini)}
                 className="h-14 cursor-pointer"
                 style={{ flexGrow: 1, flexShrink: 0 }}
                 styles={{
@@ -212,21 +212,21 @@ export default function SettingButton() {
                 <div className="flex h-full w-7 flex-shrink-0 flex-col gap-1 p-1">
                   <div
                     className="h-2 w-2 flex-shrink-0 rounded"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{ background: layoutBackground(ThemeLayout.Mini) }}
                   />
                   <div
                     className="h-1 w-full flex-shrink-0 rounded opacity-50"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{ background: layoutBackground(ThemeLayout.Mini) }}
                   />
                   <div
                     className="h-1 max-w-[12px] flex-shrink-0 rounded opacity-20"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{ background: layoutBackground(ThemeLayout.Mini) }}
                   />
                 </div>
                 <div className="h-full w-full flex-1 flex-grow p-1">
                   <div
                     className="h-full w-full rounded opacity-20"
-                    style={{ background: layoutBackground(ThemeLayout.Vertical) }}
+                    style={{ background: layoutBackground(ThemeLayout.Mini) }}
                   />
                 </div>
               </Card>

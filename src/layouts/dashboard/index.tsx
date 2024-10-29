@@ -61,7 +61,7 @@ function DashboardLayout() {
         }}
       >
         <Suspense fallback={<CircleLoading />}>
-          <Header offsetTop={themeLayout === ThemeLayout.Vertical ? offsetTop : undefined} />
+          <Header offsetTop={themeLayout === ThemeLayout.Mini ? offsetTop : undefined} />
           {nav}
           <Main ref={mainEl} offsetTop={offsetTop} />
         </Suspense>

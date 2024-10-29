@@ -1,4 +1,3 @@
-import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import { Menu, MenuProps } from 'antd';
 import Color from 'color';
 import { m } from 'framer-motion';
@@ -13,6 +12,10 @@ import { useRouteToMenuFn, usePermissionRoutes, useFlattenedRoutes } from '@/rou
 import { menuFilter } from '@/router/utils';
 import { useSettingActions, useSettings } from '@/store/settingStore';
 import { useThemeToken } from '@/theme/hooks';
+
+import AccountDropdown from '../_common/account-dropdown';
+import NoticeButton from '../_common/notice';
+import SettingButton from '../_common/setting-button';
 
 import { NAV_COLLAPSED_WIDTH, NAV_WIDTH } from './config';
 
@@ -56,7 +59,7 @@ export default function Nav(props: Props) {
   const [menuMode, setMenuMode] = useState<MenuProps['mode']>('inline');
 
   useEffect(() => {
-    if (themeLayout === ThemeLayout.Vertical) {
+    if (themeLayout === ThemeLayout.Mini) {
       const openKeys = matches
         .filter((match) => match.pathname !== '/')
         .map((match) => match.pathname);
@@ -65,7 +68,7 @@ export default function Nav(props: Props) {
   }, [matches, themeLayout]);
 
   useEffect(() => {
-    if (themeLayout === ThemeLayout.Vertical) {
+    if (themeLayout === ThemeLayout.Mini) {
       setCollapsed(false);
       setMenuMode('inline');
     }
@@ -107,7 +110,7 @@ export default function Nav(props: Props) {
     if (!collapsed) {
       setThemeLayout(ThemeLayout.Mini);
     } else {
-      setThemeLayout(ThemeLayout.Vertical);
+      setThemeLayout(ThemeLayout.Mini);
     }
     setCollapsed(!collapsed);
   };
@@ -131,18 +134,11 @@ export default function Nav(props: Props) {
             </m.div>
           )}
         </MotionContainer>
-        <button
-          onClick={toggleCollapsed}
-          className="absolute right-0 top-7 z-50 hidden h-6 w-6 translate-x-1/2 cursor-pointer select-none rounded-full text-center !text-gray md:block"
-          style={{ color: colorTextBase, borderColor: colorTextBase, fontSize: 16 }}
-        >
-          {collapsed ? <MenuUnfoldOutlined size={20} /> : <MenuFoldOutlined size={20} />}
-        </button>
       </div>
 
       <Scrollbar
         style={{
-          height: 'calc(100vh - 70px)',
+          height: 'calc(100vh - 300px)',
         }}
       >
         {/* <!-- Sidebar Menu --> */}
@@ -160,6 +156,12 @@ export default function Nav(props: Props) {
           inlineCollapsed={collapsed}
         />
       </Scrollbar>
+      <div className="flex flex-col items-center justify-center">
+        <NoticeButton />
+        <SettingButton />
+        <div className="m-4 h-px w-full bg-gray-200" />
+        <AccountDropdown />
+      </div>
     </div>
   );
 }

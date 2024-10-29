@@ -322,7 +322,7 @@ export default function MultiTabs({ offsetTop = false }: Props) {
     multiTabsStyle.right = '0px';
     multiTabsStyle.left = 'auto';
     multiTabsStyle.width = `calc(100% - ${
-      themeLayout === ThemeLayout.Vertical ? NAV_WIDTH : NAV_COLLAPSED_WIDTH
+      themeLayout === ThemeLayout.Mini ? NAV_WIDTH : NAV_COLLAPSED_WIDTH
     }px`;
   } else {
     multiTabsStyle.width = '100vw';
